@@ -9,11 +9,17 @@ import ReduxThunk from 'redux-thunk';
 import reducers from './reducers';
 import Routes from './routes';
 
+import { ApolloClient } from '@apollo/client';
+
 import * as serviceWorker from './serviceWorker';
 
 import './App.scss';
 
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleWare, ReduxThunk)(createStore);
+
+const apolloClient = new ApolloClient({
+    uri: 'http://localhost:4000/'
+})
 
 ReactDOM.render(
     <Provider store={ createStoreWithMiddleware(reducers) }>
