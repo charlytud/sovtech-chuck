@@ -12,6 +12,10 @@ const typeDefs = gql`
     value: String
   }
 
+  type Joke {
+      name: String
+  }
+
   # The "Query" type is special: it lists all of the available queries that
   # clients can execute, along with the return type for each. In this
   # case, the "books" query returns an array of zero or more Books (defined above).
@@ -41,7 +45,7 @@ const data = [
         "id": "iVjoIAYUTwqcd3STI6nk8A",
         "updated_at": "2020-01-05 13:42:20.568859",
         "url": "https://api.chucknorris.io/jokes/iVjoIAYUTwqcd3STI6nk8A",
-        "value": "The chinese delivery boy tips Chuck Norris."
+        "value": "The Chineese delivery boy tips Chuck Norris."
     },
     {
         "categories": [],
@@ -54,17 +58,18 @@ const data = [
     }  
 ];
 
-const dataSet = axios.get(
+const res = axios.get(
     'https://api.chucknorris.io/jokes/random',
     {params: {category: 'dev'}}
-);
+)
+//.then(res => [res.data])
+.then( res => res.data);
 
-console.log(dataSet);
 // Resolvers define the technique for fetching the types defined in the
 // schema. This resolver retrieves books from the "books" array above.
 const resolvers = {
     Query: {
-      categories: () => data
+      categories: () => res
     },
   };
 
