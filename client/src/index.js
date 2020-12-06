@@ -10,7 +10,7 @@ import reducers from './reducers';
 import Routes from './routes';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { ApolloClient } from '@apollo/client';
+import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 
 import * as serviceWorker from './serviceWorker';
@@ -25,7 +25,7 @@ const apolloClient = new ApolloClient({
 
 ReactDOM.render(
     <ApolloProvider client={apolloClient}>
-        <Provider store={ createStoreWithMiddleware(reducers), composeWithDevTools() }>
+        <Provider store={ createStoreWithMiddleware(reducers) }>
             <BrowserRouter>
                 <Routes/>
             </BrowserRouter>
