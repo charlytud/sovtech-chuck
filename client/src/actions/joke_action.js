@@ -12,7 +12,7 @@ const QUERY_RANDOM_JOKE = gql`
   }
 `;
 
-export const getCategories = () => async dispatch => {
+export const getRandomJoke = () => async dispatch => {
   try {
     dispatch({ type: JOKE_LOADING, payload: true });
     const joke = await useQuery(QUERY_RANDOM_JOKE);
