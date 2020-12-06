@@ -13,7 +13,7 @@ const typeDefs = gql`
   }
 
   type Joke {
-      name: String
+      value: String
   }
 
   # The "Query" type is special: it lists all of the available queries that

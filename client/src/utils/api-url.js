@@ -1,5 +1,2 @@
-export const URI_SERVER = 'localhost'; 
-
-
-
+export const URI_SERVER = 'http://localhost:4000'; 
 
