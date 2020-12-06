@@ -8,8 +8,10 @@ import ReduxThunk from 'redux-thunk';
 
 import reducers from './reducers';
 import Routes from './routes';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { ApolloClient } from '@apollo/client';
+import { ApolloProvider } from 'react-apollo';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -22,11 +24,13 @@ const apolloClient = new ApolloClient({
 })
 
 ReactDOM.render(
-    <Provider store={ createStoreWithMiddleware(reducers) }>
-        <BrowserRouter>
-            <Routes/>
-        </BrowserRouter>
-    </Provider>
+    <ApolloProvider client={apolloClient}>
+        <Provider store={ createStoreWithMiddleware(reducers), composeWithDevTools() }>
+            <BrowserRouter>
+                <Routes/>
+            </BrowserRouter>
+        </Provider>
+    </ApolloProvider>
     ,document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

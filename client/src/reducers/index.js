@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
-// import product from './product_reducer';
-import product from './product_reducer';
+import category from './category_reducer';
+import joke from './joke_reducer';
 
 const rootReducer = combineReducers({
-    product
+    category,
+    joke
 });
 
 export default rootReducer;
