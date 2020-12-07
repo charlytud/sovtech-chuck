@@ -1,0 +1,30 @@
+.app-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    padding: 15px 0;
+    margin: 0 0 5px 0;
+    background-color: $mainBlack;
+    
+    h1 {
+        font-size: 1rem;
+        font-weight: $bold;
+        margin: 5px 0;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px 8px;
+        font-size: .9rem;
+
+        li {
+            color: $lightGray;
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
