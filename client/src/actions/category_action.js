@@ -1,4 +1,4 @@
-import { gql, useQuery } from '@apollo/client';
+import { gql, useQuery } from 'apollo-boost';
 
 import {
   GET_CATEGORIES,

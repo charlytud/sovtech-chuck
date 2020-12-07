@@ -9,7 +9,7 @@ const typeDefs = gql`
 
   # This "Book" type defines the queryable fields for every book in our data source.
   type Category {
-    value: String
+    name: String
   }
 
   type Joke {
@@ -21,11 +21,12 @@ const typeDefs = gql`
   # case, the "books" query returns an array of zero or more Books (defined above).
   type Query {
     categories: [Category]
+    random_joke: [Joke]
   }
 `;
 
 
-const categories = [
+const random_joke = [
     {
       name: 'james',
       author: 'Kate Chopin',
@@ -39,7 +40,7 @@ const categories = [
 
 const data = [
     {  
-        "categories": [],
+        "random_joke": [],
         "created_at": "2020-01-05 13:42:20.568859",
         "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
         "id": "iVjoIAYUTwqcd3STI6nk8A",
@@ -48,7 +49,7 @@ const data = [
         "value": "The Chineese delivery boy tips Chuck Norris."
     },
     {
-        "categories": [],
+        "random_joke": [],
         "created_at": "2020-01-05 13:42:20.568859",
         "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
         "id": "iVjoIAYUTwqcd3STI6nk8A",
@@ -59,17 +60,21 @@ const data = [
 ];
 
 const res = axios.get(
-    'https://api.chucknorris.io/jokes/random',
-    {params: {category: 'dev'}}
-)
-//.then(res => [res.data])
-.then( res => res.data);
+  'https://api.chucknorris.io/jokes/categories',
+) 
+.then(res => res.data.map( name => (`"name": "${name}"`)))
+.then( res => console.log(res));
 
 // Resolvers define the technique for fetching the types defined in the
 // schema. This resolver retrieves books from the "books" array above.
 const resolvers = {
     Query: {
-      categories: () => res
+      categories: () => res,
+      random_joke: () => axios.get(
+        'https://api.chucknorris.io/jokes/random',
+        {params: {category: 'dev'}}
+      )
+      .then(res => [res.data])
     },
   };
 
