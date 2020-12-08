@@ -1,26 +1,10 @@
 import React from 'react';
 import { gql } from 'apollo-boost';
 import { useQuery } from 'react-apollo';
+import  { QUERY_CATEGORIES } from '../../graphql/category-queries';
+import { QUERY_RANDOM_JOKE } from '../../graphql/joke-queries';
 
-export default function Header() {    
-
-    const QUERY_RANDOM_JOKE = gql`
-    query GetRandomJoke {
-    random_joke {
-    value
-        }
-    }
-    `;
-
-const QUERY_CATEGORIES = gql`
-    query GetCategories {
-    categories {
-    name
-        }
-    }
-    `;
-
-    
+export default function Header() {   
     const categories = useQuery(QUERY_CATEGORIES);
     console.log("### Categories ###");
     console.log(categories);
