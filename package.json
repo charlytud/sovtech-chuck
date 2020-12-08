@@ -1,7 +1,7 @@
 {
   "name": "sovtech-chuck",
   "version": "1.0.0",
-  "description": "display jokes based on categories from the chucknorris.io api\"",
+  "description": "apollo server that expose the chucknorris.io REST api data",
   "main": "index.js",
   "repository": "git@github.com:charlytud/sovtech-chuck.git",
   "author": "Georges Charly Takoudjou",
