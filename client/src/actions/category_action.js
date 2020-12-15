@@ -1,7 +1,9 @@
-import { gql, useQuery } from 'apollo-boost';
+import { gql } from 'apollo-boost';
+import { useQuery } from 'react-apollo';
 
 import {
   GET_CATEGORIES,
+  CATEGORY_LOADING,
 } from "./types";
 
 const QUERY_CATEGORIES = gql`

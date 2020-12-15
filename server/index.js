@@ -28,7 +28,7 @@ const res = axios.get(
   'https://api.chucknorris.io/jokes/categories',
 ) 
 .then(res => res.data.map( name => (`"name": "${name}"`)))
-.then( res => console.log(res));
+//.then( res => console.log(res));
 
 // Resolvers define the technique for fetching the types defined in the
 // schema. This resolver retrieves books from the "books" array above.

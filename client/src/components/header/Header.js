@@ -1,17 +1,17 @@
 import React from 'react';
-import { gql } from 'apollo-boost';
-import { useQuery } from 'react-apollo';
-import  { QUERY_CATEGORIES } from '../../graphql/category-queries';
-import { QUERY_RANDOM_JOKE } from '../../graphql/joke-queries';
+// import { gql } from 'apollo-boost';
+// import { useQuery } from 'react-apollo';
+//import  { QUERY_CATEGORIES } from '../../graphql/category-queries';
+//import { QUERY_RANDOM_JOKE } from '../../graphql/joke-queries';
 
 export default function Header() {   
-    const categories = useQuery(QUERY_CATEGORIES);
-    console.log("### Categories ###");
-    console.log(categories);
+    // const categories = useQuery(QUERY_CATEGORIES);
+    // console.log("### Categories ###");
+    // console.log(categories);
 
-    const joke = useQuery(QUERY_RANDOM_JOKE);
-    console.log("### Random Joke ###");
-    console.log(joke);
+    // const joke = useQuery(QUERY_RANDOM_JOKE);
+    // console.log("### Random Joke ###");
+    // console.log(joke);
 
     return (
         <div className="app-header">
