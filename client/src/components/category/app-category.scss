@@ -1,0 +1,7 @@
+.app-category {
+  color: $mainBlack;
+  &__list {
+      display: flex;
+      flex-direction: column;
+  }
+}

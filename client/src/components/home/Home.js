@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import Header from '../header/Header';
-import CategoryList from '../categories/CategoryList
+import CategoryList from '../category/CategoryList';
 
 export default class Home extends Component {
     render() {

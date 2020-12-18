@@ -1,0 +1,19 @@
+.app-btn {
+    font-weight: $bold;
+    border: 1px solid $mainBlack;
+
+    &--category {
+        min-width: 100%;
+        color: $mainBlack;
+        margin: 0 auto;
+        padding: 8px 5px;
+        background-color: $darkWhite;
+    }
+
+    &--modal {
+        color: $mainBlack;
+        padding: 10px 5px;
+        border-radius: 25px;
+        background-color: $darkWhite;
+    }
+}

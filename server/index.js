@@ -32,14 +32,46 @@ const res = axios.get(
 
 // Resolvers define the technique for fetching the types defined in the
 // schema. This resolver retrieves books from the "books" array above.
+
+const cat = categories = [
+  "animal",
+  "career",
+  "celebrity",
+  "dev",
+  "explicit",
+  "fashion",
+  "food",
+  "history",
+  "money",
+  "movie",
+  "music",
+  "political",
+  "religion",
+  "science",
+  "sport",
+  "travel"
+];
+
+const joke = {
+  "categories": [],
+  "created_at": "2020-01-05 13:42:19.104863",
+  "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+  "id": "zGQp6B1wSrmNrE5ijXwVHA",
+  "updated_at": "2020-01-05 13:42:19.104863",
+  "url": "https://api.chucknorris.io/jokes/zGQp6B1wSrmNrE5ijXwVHA",
+  "value": "Chuck Norris was born when the roundhouse kicks were two minutes apart."
+}
+
 const resolvers = {
     Query: {
-      categories: () => res,
-      random_joke: () => axios.get(
-        'https://api.chucknorris.io/jokes/random',
-        {params: {category: 'dev'}}
-      )
-      .then(res => [res.data])
+      // categories: () => res,
+      // random_joke: () => axios.get(
+      //   'https://api.chucknorris.io/jokes/random',
+      //   {params: {category: 'dev'}}
+      // )
+      // .then(res => [res.data])
+      categories: cat,
+      random_joke: joke
     },
   };
 

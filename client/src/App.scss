@@ -3,5 +3,11 @@
 @import './styles/base/_global';
 @import './styles/base/_mixins';
 
+@import './styles/base/app-btn';
+
+@import './widgets/modal/app-modal_joke.scss';
+
 @import './components/header/app-header';
 @import './components/home/app-home';
+@import './components/category/app-category.scss';
+@import './components/joke/app-joke.scss';

@@ -18,6 +18,25 @@ export const getCategories = () => async dispatch => {
   try {
     dispatch({ type: CATEGORY_LOADING, payload: true });
     const categories = await useQuery(QUERY_CATEGORIES);
+    // const categories = [
+    //   "animal",
+    //   "career",
+    //   "celebrity",
+    //   "dev",
+    //   "explicit",
+    //   "fashion",
+    //   "food",
+    //   "history",
+    //   "money",
+    //   "movie",
+    //   "music",
+    //   "political",
+    //   "religion",
+    //   "science",
+    //   "sport",
+    //   "travel"
+    // ];
+    
     dispatch({ type: GET_CATEGORIES, payload: categories });
   } catch (error) {
     // const err = JSON.parse(error);
