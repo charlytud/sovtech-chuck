@@ -8,8 +8,11 @@ import {
 
 export const getCategories = () => async dispatch => {
   try {
+    //console.log("### QUERY SENT ###");
     dispatch({ type: CATEGORY_LOADING, payload: true });
-    const categories = await useQuery(QUERY_CATEGORIES);
+    const { data, error } = await useQuery(QUERY_CATEGORIES);
+    //console.log("### QUERY RES ###");
+    //console.log(categories);
     // const categories = [
     //   "animal",
     //   "career",
@@ -29,7 +32,7 @@ export const getCategories = () => async dispatch => {
     //   "travel"
     // ];
     
-    dispatch({ type: GET_CATEGORIES, payload: categories });
+    dispatch({ type: GET_CATEGORIES, payload: data });
   } catch (error) {
     // const err = JSON.parse(error);
     // dispatch({ type: GET_ERRORS, payload: err });
