@@ -1,4 +1,3 @@
-import { gql } from 'apollo-boost';
 import { useQuery } from 'react-apollo';
 import { QUERY_RANDOM_JOKE } from '../graphql/joke-queries';
 
