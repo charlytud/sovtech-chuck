@@ -1,18 +1,12 @@
 import { gql } from 'apollo-boost';
 import { useQuery } from 'react-apollo';
+import { QUERY_RANDOM_JOKE } from '../graphql/joke-queries';
+
 
 import {
   GET_RANDOM_JOKE,
   JOKE_LOADING
 } from "./types";
-
-const QUERY_RANDOM_JOKE = gql`
-  query GetRandomJoke {
-    random_joke {
-      value
-    }
-  }
-`;
 
 export const getRandomJoke = () => async dispatch => {
   try {

@@ -1,18 +1,11 @@
 import { gql } from 'apollo-boost';
 import { useQuery } from 'react-apollo';
+import { QUERY_CATEGORIES } from '../graphql/category-queries';
 
 import {
   GET_CATEGORIES,
   CATEGORY_LOADING,
 } from "./types";
-
-const QUERY_CATEGORIES = gql`
-  query GetCategories {
-    categories {
-      name
-    }
-  }
-`;
 
 export const getCategories = () => async dispatch => {
   try {
