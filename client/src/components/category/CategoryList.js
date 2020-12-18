@@ -4,6 +4,7 @@ import { getRandomJoke } from '../../actions/joke_action';
 import { connect } from 'react-redux';
 import Category from './Category';
 import ModalJoke from '../../widgets/modal/ModalJoke';
+import Spinner from '../../widgets/spinner/Spinner';
 
 class CategoryList extends Component {
     constructor(props){
@@ -86,7 +87,7 @@ class CategoryList extends Component {
                 {
                     loadingCategory
                     ?
-                    <div>Loading...</div>
+                    <Spinner />
                     :
                     this.renderCategory(category) 
                 }

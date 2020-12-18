@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import Joke from '../../components/joke/Joke'
+import Joke from '../../components/joke/Joke';
+import Spinner from '../spinner/Spinner';
 
 export default class AppModal extends Component {
     constructor(props) {
         super();
         this.state = {
-            showModal: false
+            showModal: false,
         }
 
         this.toggleModalJoke = this.toggleModalJoke.bind(this);
@@ -29,7 +30,7 @@ export default class AppModal extends Component {
                 { 
                     loadingJoke
                     ?
-                    <div>Loading...</div>
+                    <Spinner />
                     :
                     <Joke joke={joke} />
                 }   
